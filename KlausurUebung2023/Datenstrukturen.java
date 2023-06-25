@@ -1,12 +1,18 @@
 import java.util.Vector;
-
+//Credits an Marlon
 public class Datenstrukturen {
-	
+	int counter = 0;
+	String[] data;
 	public String[] sampleVectorIntoArray(Vector<String> vector){
-		String[] data = new String[vector.size()];
-		for (int i = 0; i < vector.size(); i += 2)
-			data[i / 2] = vector.get(i);
-        
+		if(vector.size()%2!=0){
+			data = new String[vector.size()/2+1];
+		} else {
+			data = new String[vector.size()/2];
+		}
+		for(int i = 0; i < vector.size(); i = i+2){
+			data[counter] = vector.elementAt(i);
+			counter++;
+		}
 		return data;
 	}
 }
